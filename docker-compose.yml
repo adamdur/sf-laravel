@@ -19,7 +19,6 @@ services:
             IGNITION_LOCAL_SITES_PATH: '${PWD}'
         volumes:
             - '.:/var/www/html'
-            - '/Users/duris/www/sf-apiclient:/var/www/sf-apiclient'
         networks:
             - sail
         depends_on:

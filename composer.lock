@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e063b3c583f6da0413681a7690da08bb",
+    "content-hash": "95efcabb523a904db8084cc03ed28475",
     "packages": [
         {
             "name": "brick/math",
@@ -3243,11 +3243,17 @@
         },
         {
             "name": "superfaktura/apiclient",
-            "version": "dev-master",
+            "version": "dev-feature/companies-ep",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/adamdur/sf-apiclient.git",
+                "reference": "10bcd51c8811ab799e0adf84fcf7f7a9dd98d717"
+            },
             "dist": {
-                "type": "path",
-                "url": "/var/www/sf-apiclient",
-                "reference": "efb5e41a5f994624d8e7a94019c90b676c4ecb0a"
+                "type": "zip",
+                "url": "https://api.github.com/repos/adamdur/sf-apiclient/zipball/10bcd51c8811ab799e0adf84fcf7f7a9dd98d717",
+                "reference": "10bcd51c8811ab799e0adf84fcf7f7a9dd98d717",
+                "shasum": ""
             },
             "require": {
                 "ext-json": "*",
@@ -3314,10 +3320,10 @@
                 "invoice",
                 "invoices"
             ],
-            "transport-options": {
-                "symlink": true,
-                "relative": false
-            }
+            "support": {
+                "source": "https://github.com/adamdur/sf-apiclient/tree/feature/companies-ep"
+            },
+            "time": "2024-02-15T08:59:01+00:00"
         },
         {
             "name": "symfony/console",

@@ -10,7 +10,7 @@
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
-        "superfaktura/apiclient": "dev-master"
+        "superfaktura/apiclient": "dev-feature/companies-ep"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
@@ -66,11 +66,8 @@
     "prefer-stable": true,
     "repositories": [
         {
-            "type": "path",
-            "url": "/var/www/sf-apiclient",
-            "options": {
-                "symlink": true
-            }
+            "type": "vcs",
+            "url": "https://github.com/adamdur/sf-apiclient"
         }
     ]
 }
