@@ -14,9 +14,15 @@ class CompaniesController extends Controller
         $error = null;
 
         if ($request->isMethod('post')) {
+            $validatedData = $request->validate([
+                'mail' => 'nullable|email',
+                'api_key' => 'nullable|string',
+                'app_title' => 'nullable|string',
+                'company_id' => 'nullable|numeric',
+            ]);
             try {
                 $apiClientFactory = app('apiClientFactory');
-                $api = $apiClientFactory($request->only(['mail', 'api_key', 'app_title', 'company_id']));
+                $api = $apiClientFactory($validatedData);
                 $response = $api->companies->getAll();
             } catch (Throwable $e) {
                 $error = $e->getMessage();

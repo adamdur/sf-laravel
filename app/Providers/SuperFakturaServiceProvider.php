@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use InvalidArgumentException;
 use SuperFaktura\ApiClient\ApiClient;
 use SuperFaktura\ApiClient\Authorization\SimpleProvider;
 use SuperFaktura\ApiClient\MarketUri;
@@ -20,6 +21,10 @@ class SuperFakturaServiceProvider extends ServiceProvider
                 $apiKey = $credentials['api_key'] ?? env('SF_API_KEY');
                 $appTitle = $credentials['app_title'] ?? env('SF_APP_TITLE');
                 $companyId = $credentials['company_id'] ?? env('SF_COMPANY_ID');
+
+                if (!is_numeric($companyId)) {
+                    throw new InvalidArgumentException('The SF_COMPANY_ID environment variable must be a number.');
+                }
 
                 return new ApiClient(
                     new SimpleProvider($mail, $apiKey, $appTitle, $companyId),
