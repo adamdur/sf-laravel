@@ -17,7 +17,7 @@ class CompaniesController extends Controller
             try {
                 $apiClientFactory = app('apiClientFactory');
                 $api = $apiClientFactory($request->only(['mail', 'api_key', 'app_title', 'company_id']));
-                $response = $api->companies->getCurrent();
+                $response = $api->companies->getAll();
             } catch (Throwable $e) {
                 $error = $e->getMessage();
             }

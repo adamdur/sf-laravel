@@ -31,8 +31,7 @@ cp .env.example .env
 Use Composer to install the project dependencies. With Laravel Sail, you can run Composer commands within the Docker container without having Composer installed on your local machine:
 
 ```bash
-./vendor/bin/sail up -d
-./vendor/bin/sail composer install
+composer install
 ```
 
 ### 4. Generate Application Key
